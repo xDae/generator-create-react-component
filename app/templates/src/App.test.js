@@ -4,5 +4,5 @@ import Button from './index';
 
 it('renders without crashing', () => {
   const wrapper = shallow(<Button>Hello Button</Button>);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.text()).toEqual('Hello Button');
 });

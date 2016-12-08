@@ -1,19 +1,20 @@
-# generator-react-component-boilerplate [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> A yeoman generator for reusable Reac Components
+# Create React Component Generator
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+> A yeoman generator for reusable React Components
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-react-component-boilerplate using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-create-react-component using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
-npm install -g generator-react-component-boilerplate
+npm install -g generator-create-react-component
 ```
 
 Then generate your new project:
 
 ```bash
-yo react-component-boilerplate
+yo create-react-component
 ```
 
 ## Getting To Know Yeoman
@@ -28,11 +29,11 @@ yo react-component-boilerplate
 MIT © [Jose Miguel Bejarano](josemiguel.org)
 
 
-[npm-image]: https://badge.fury.io/js/generator-react-component-boilerplate.svg
-[npm-url]: https://npmjs.org/package/generator-react-component-boilerplate
-[travis-image]: https://travis-ci.org/xDae/generator-react-component-boilerplate.svg?branch=master
-[travis-url]: https://travis-ci.org/xDae/generator-react-component-boilerplate
-[daviddm-image]: https://david-dm.org/xDae/generator-react-component-boilerplate.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/xDae/generator-react-component-boilerplate
-[coveralls-image]: https://coveralls.io/repos/xDae/generator-react-component-boilerplate/badge.svg
-[coveralls-url]: https://coveralls.io/r/xDae/generator-react-component-boilerplate
+[npm-image]: https://badge.fury.io/js/generator-create-react-component.svg
+[npm-url]: https://npmjs.org/package/generator-create-react-component
+[travis-image]: https://travis-ci.org/xDae/generator-create-react-component.svg?branch=master
+[travis-url]: https://travis-ci.org/xDae/generator-create-react-component
+[daviddm-image]: https://david-dm.org/xDae/generator-create-react-component.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/xDae/generator-create-react-component
+[coveralls-image]: https://coveralls.io/repos/xDae/generator-create-react-component/badge.svg
+[coveralls-url]: https://coveralls.io/r/xDae/generator-create-react-component

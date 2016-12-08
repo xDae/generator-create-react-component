@@ -7,9 +7,8 @@ node_modules
 coverage
 
 # production
-build
+lib
 
 # misc
 .DS_Store
-.env
 npm-debug.log

@@ -75,11 +75,26 @@ module.exports = yeoman.Base.extend({
     );
 
     this.fs.copy(
+      this.templatePath('babelrc'), this.destinationPath('.babelrc')
+    );
+
+    this.fs.copy(
+      this.templatePath('eslintrc'), this.destinationPath('.eslintrc')
+    );
+
+    this.fs.copy(
       this.templatePath('gitignore'), this.destinationPath('.gitignore')
     );
+
     this.fs.copy(
       this.templatePath('editorconfig'), this.destinationPath('.editorconfig')
     );
+
+    if (this.props.license === 'MIT') {
+      this.fs.copy(
+        this.templatePath('LICENSE_MIT'), this.destinationPath('LICENSE')
+      );
+    }
 
     this.fs.copy(
       this.templatePath('src/'), this.destinationPath('src/')
