@@ -6,10 +6,21 @@ var yosay = require('yosay');
 
 module.exports = yeoman.Base.extend({
   prompting: function () {
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the stupendous ' + chalk.red('generator-react-component-boilerplate') + ' generator!'
-    ));
+    this.log(
+      chalk.blue(' ____                 _') + '\n' +
+      chalk.blue('|  _ \\ ___  __ _  ___| |_') + '\n' +
+      chalk.blue('| |_) / _ \\/ _` |/ __| __|') + '\n' +
+      chalk.blue('|  _ <  __/ (_| | (__| |_') + '\n' +
+      chalk.blue('|_|_\\_\\___|\\__,_|\\___|\\__|                         _') + '\n' +
+      chalk.blue(' / ___|___  _ __ ___  _ __   ___  _ __   ___ _ __ | |_') + '\n' +
+      chalk.blue('| |   / _ \\| \'_ ` _ \\| \'_ \\ / _ \\| \'_ \\ / _ \\ \'_ \\| __|') + '\n' +
+      chalk.blue('| |__| (_) | | | | | | |_) | (_) | | | |  __/ | | | |_') + '\n' +
+      chalk.blue(' \\____\\___/|_| |_| |_| .__/ \\___/|_| |_|\\___|_| |_|\\__|') + '\n' +
+      chalk.blue(' / ___| ___ _ __   __|_| __ __ _| |_ ___  _ __\'') + '\n' +
+      chalk.blue('| |  _ / _ \\ \'_ \\ / _ \\ \'__/ _` | __/ _ \\| \'__|') + '\n' +
+      chalk.blue('| |_| |  __/ | | |  __/ | | (_| | || (_) | |') + '\n' +
+      chalk.blue(' \\____|\\___|_| |_|\\___|_|  \\__,_|\\__\\___/|_|') + '\n'
+    );
 
     var prompts = [
       {
