@@ -70,19 +70,21 @@ module.exports = yeoman.Base.extend({
 
   writing: function () {
     this.fs.copyTpl(
-      this.templatePath('_package.json'), this.destinationPath('package.json'),
-      {name: _.kebabCase(_.deburr(this.props.componentName)),
+      this.templatePath('_package.json'), this.destinationPath('package.json'), {
+        name: _.kebabCase(_.deburr(this.props.componentName)),
         version: this.props.version,
         description: this.props.description,
         author: this.props.author,
         ghUser: this.props.ghUser,
-        license: this.props.license}
-      );
+        license: this.props.license
+      }
+    );
 
     this.fs.copyTpl(
-      this.templatePath('_README.md'), this.destinationPath('README.md'),
-      {name: this.props.componentName,
-        description: this.props.description}
+      this.templatePath('_README.md'), this.destinationPath('README.md'), {
+        name: this.props.componentName,
+        description: this.props.description
+      }
     );
 
     this.fs.copy(
