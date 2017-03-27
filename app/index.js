@@ -1,11 +1,11 @@
 'use strict';
-var yeoman = require('yeoman-generator');
+const Generator = require('yeoman-generator');
 var _ = require('lodash');
 var chalk = require('chalk');
 var yosay = require('yosay');
 
-module.exports = yeoman.Base.extend({
-  prompting: function () {
+module.exports = class extends Generator {
+  prompting() {
     this.log(
       chalk.blue(' ____                 _') + '\n' +
       chalk.blue('|  _ \\ ___  __ _  ___| |_') + '\n' +
@@ -22,7 +22,7 @@ module.exports = yeoman.Base.extend({
       chalk.blue(' \\____|\\___|_| |_|\\___|_|  \\__,_|\\__\\___/|_|') + '\n'
     );
 
-    var prompts = [
+    const prompts = [
       {
         type: 'input',
         name: 'componentName',
@@ -61,14 +61,14 @@ module.exports = yeoman.Base.extend({
       }
     ];
 
-    return this.prompt(prompts)
-      .then(function (props) {
+      return this.prompt(prompts)
+        .then(props => {
         // To access props later use this.props.someAnswer;
         this.props = props;
-      }.bind(this));
-  },
+    });
+  }
 
-  writing: function () {
+  writing() {
     this.fs.copyTpl(
       this.templatePath('_package.json'), this.destinationPath('package.json'), {
         name: _.kebabCase(_.deburr(this.props.componentName)),
@@ -81,26 +81,31 @@ module.exports = yeoman.Base.extend({
     );
 
     this.fs.copyTpl(
-      this.templatePath('_README.md'), this.destinationPath('README.md'), {
+      this.templatePath('_README.md'),
+      this.destinationPath('README.md'), {
         name: this.props.componentName,
         description: this.props.description
       }
     );
 
     this.fs.copy(
-      this.templatePath('babelrc'), this.destinationPath('.babelrc')
+      this.templatePath('babelrc'),
+      this.destinationPath('.babelrc')
     );
 
     this.fs.copy(
-      this.templatePath('eslintrc'), this.destinationPath('.eslintrc')
+      this.templatePath('eslintrc'),
+      this.destinationPath('.eslintrc')
     );
 
     this.fs.copy(
-      this.templatePath('gitignore'), this.destinationPath('.gitignore')
+      this.templatePath('gitignore'),
+      this.destinationPath('.gitignore')
     );
 
     this.fs.copy(
-      this.templatePath('editorconfig'), this.destinationPath('.editorconfig')
+      this.templatePath('editorconfig'),
+      this.destinationPath('.editorconfig')
     );
 
     if (this.props.license === 'MIT') {
@@ -110,19 +115,22 @@ module.exports = yeoman.Base.extend({
     }
 
     this.fs.copy(
-      this.templatePath('src/'), this.destinationPath('src/')
+      this.templatePath('src/'),
+      this.destinationPath('src/')
     );
 
     this.fs.copy(
-      this.templatePath('stories/'), this.destinationPath('stories/')
+      this.templatePath('stories/'),
+      this.destinationPath('stories/')
     );
 
     this.fs.copy(
-      this.templatePath('.storybook/'), this.destinationPath('.storybook/')
+      this.templatePath('.storybook/'),
+      this.destinationPath('.storybook/')
     );
-  },
+  }
 
-  install: function () {
+  install() {
     this.installDependencies();
   }
-});
+};

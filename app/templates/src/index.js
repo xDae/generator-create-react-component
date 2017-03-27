@@ -10,7 +10,7 @@ const buttonStyles = {
   margin: 10
 };
 
-const Button = ({children, onClick}) => (
+const Button = ({ children, onClick }) => (
   <button
     style={buttonStyles}
     onClick={onClick}
